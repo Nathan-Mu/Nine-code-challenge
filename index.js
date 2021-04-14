@@ -17,8 +17,8 @@ app.use((e, req, res, next) => {
 });
 app.use('/', routes);
 
-const server = app.listen(PORT, () => {
-	console.log(`Info: server listening at port ${PORT}`);
+const server = app.listen(process.env.PORT || PORT, () => {
+	console.log(`Info: server listening at port ${process.env.PORT || PORT}`);
 });
 
 module.exports = server;

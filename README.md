@@ -1,4 +1,5 @@
 # Nine-code-challenge
+
 This is a solution to Nine's code challenge
 
 ## Solution Url
@@ -7,14 +8,14 @@ This is a solution to Nine's code challenge
 POST https://solution-nine-cc.herokuapp.com/api/filter
 ```
 
-* Only accept valid json objects
+- Only accept valid json objects
 
 ## Technologies / Libraries
 
-| Name      | Description                                                  | Website/Repo                             |
-| --------- | ------------------------------------------------------------ | ---------------------------------------- |
-| Express   | Fast, unopinionated, minimalist web framework for node.      | https://github.com/expressjs/express     |
-| Jest      | Delightful JavaScript testing library                        | https://github.com/facebook/jest         |
+| Name      | Description                                                                    | Website/Repo                             |
+| --------- | ------------------------------------------------------------------------------ | ---------------------------------------- |
+| Express   | Fast, unopinionated, minimalist web framework for node.                        | https://github.com/expressjs/express     |
+| Jest      | Delightful JavaScript testing library                                          | https://github.com/facebook/jest         |
 | Supertest | Super-agent driven library for testing node.js HTTP servers using a fluent API | https://github.com/visionmedia/supertest |
 
 ## File Structure
@@ -23,14 +24,14 @@ POST https://solution-nine-cc.herokuapp.com/api/filter
 ├── config
     └── app.js
 ├── routes
-		├── filter.js
-		└── index.js
+	├── filter.js
+	└── index.js
 ├── test
     ├── routes
-        └── filter.test.js
-    ├── testSampleData
-        └── routes
-            └── filter.sample.js
+    └── filter.test.js
+        ├── testSampleData
+            └── routes
+                └── filter.sample.js
 └── index.js
 ```
 
@@ -70,8 +71,3 @@ To test the project, use the command
 ```
 $ npm test
 ```
-
-
-
-
-

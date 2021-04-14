@@ -29,7 +29,7 @@ POST https://solution-nine-cc.herokuapp.com/api/filter
 ├── test
     ├── routes
     └── filter.test.js
-        ├── testSampleData
+        └── testSampleData
             └── routes
                 └── filter.sample.js
 └── index.js

@@ -37,7 +37,7 @@ POST https://solution-nine-cc.herokuapp.com/api/filter
 
 ## Testing Cases
 
-This solution has been tested into 6 cases
+This solution has been tested into 7 cases
 
 When request is invalid, it should send bad request `code: 400, body: {error}`
 

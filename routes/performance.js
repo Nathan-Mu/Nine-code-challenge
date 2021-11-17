@@ -24,12 +24,12 @@ router.post('', async (req, res) => {
     fs.appendFile(filePath, data + '\n', (error) => {
       if (error) {
         console.log(error);
-        res.status(300).send();
+        res.status(400).send();
       }
       res.status(200).send();
     })
   }
-  res.status(200).send();
+  res.status(400).send();
 });
 
 module.exports = router;

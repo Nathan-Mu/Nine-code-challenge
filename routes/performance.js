@@ -26,10 +26,12 @@ router.post('', async (req, res) => {
         console.log(error);
         res.status(400).send();
       }
+      console.log('append data success');
       res.status(200).send();
     })
+  } else {
+    res.status(400).send();
   }
-  res.status(400).send();
 });
 
 module.exports = router;

@@ -1,0 +1,35 @@
+const express = require('express');
+const fs = require('fs');
+const path = require('path');
+const { writeToString } = require('@fast-csv/format');
+
+const router = express.Router();
+
+const dir = '../performance';
+const dirPath = path.resolve(__dirname, dir);
+
+if (!fs.existsSync(dirPath)){
+    fs.mkdirSync(dirPath, { recursive: true });
+}
+
+// request body data format
+// {uniqueId, rows: [{uniqueId, deviceId, systemVersion, eventName, timestamp}]}
+
+router.post('', async (req, res) => {
+  const { uniqueId, rows } = req.body;
+  const filePath = path.resolve(__dirname, dir, `${uniqueId}.csv`);
+  const isExisted = fs.existsSync(filePath)
+  if (rows) {
+    const data = await writeToString(rows, { headers: !isExisted});
+    fs.appendFile(filePath, data + '\n', (error) => {
+      if (error) {
+        console.log(error);
+        res.status(300).send();
+      }
+      res.status(200).send();
+    })
+  }
+  res.status(200).send();
+});
+
+module.exports = router;
